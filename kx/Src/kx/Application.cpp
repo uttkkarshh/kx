@@ -11,7 +11,7 @@ namespace kx {
 	void Application::Run() {
 		while (true)
 		{
-			printf("h"); 
+			
 		}
 	    }
 }
