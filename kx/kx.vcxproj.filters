@@ -19,6 +19,10 @@
     <ClInclude Include="Src\kx\Logger.h">
       <Filter>kx</Filter>
     </ClInclude>
+    <ClInclude Include="Src\kx\Event\Event.h" />
+    <ClInclude Include="Src\kx\Event\KeyEvent.h" />
+    <ClInclude Include="Src\kx\Event\MouseEvent.h" />
+    <ClInclude Include="Src\kx\Event\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\kx\Application.cpp">

@@ -19,7 +19,8 @@ project "kx"
    }
 
    includedirs{
-	   "%{prj.name}/vendor/spdlog/include"
+	   "%{prj.name}/vendor/spdlog/include",
+	   "kx/Src"
 
    }
    filter "system:windows"
