@@ -3,6 +3,11 @@ workspace "kx"
    configurations { "Debug", "Release","Dist" }
 
 outputdir = "%{cfg.bhidcfg}-%{cfg.system}-%{cfg.architecture}"
+IncludeDir = {}
+IncludeDir["GLFW"]="kx/vendor/GLFW/include"
+
+
+
 project "kx"
    location "kx"
    kind "SharedLib"
@@ -20,9 +25,11 @@ project "kx"
 
    includedirs{
 	   "%{prj.name}/vendor/spdlog/include",
-	   "kx/Src"
+	   "kx/Src",
+	   "%{IncludeDir.GLFW}"
 
    }
+  
    filter "system:windows"
       cppdialect "c++17"
 	  staticruntime "On"

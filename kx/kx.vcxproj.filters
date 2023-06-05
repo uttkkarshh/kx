@@ -4,6 +4,15 @@
     <Filter Include="kx">
       <UniqueIdentifier>{88785900-7404-880B-DDB2-880BC95D880B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="kx\Event">
+      <UniqueIdentifier>{D93F49C3-C50C-A4CE-EE25-9276DA51D95C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kx\Platform">
+      <UniqueIdentifier>{DCCDCB29-4883-441F-D177-3EF63D2C3B23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kx\Platform\Windows">
+      <UniqueIdentifier>{1694470C-82F5-241A-0B63-6BCC77C35BD9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\kx.h" />
@@ -16,13 +25,29 @@
     <ClInclude Include="Src\kx\Entrypoint.h">
       <Filter>kx</Filter>
     </ClInclude>
+    <ClInclude Include="Src\kx\Event\ApplicationEvent.h">
+      <Filter>kx\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\kx\Event\Event.h">
+      <Filter>kx\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\kx\Event\KeyEvent.h">
+      <Filter>kx\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\kx\Event\MouseEvent.h">
+      <Filter>kx\Event</Filter>
+    </ClInclude>
     <ClInclude Include="Src\kx\Logger.h">
       <Filter>kx</Filter>
     </ClInclude>
-    <ClInclude Include="Src\kx\Event\Event.h" />
-    <ClInclude Include="Src\kx\Event\KeyEvent.h" />
-    <ClInclude Include="Src\kx\Event\MouseEvent.h" />
-    <ClInclude Include="Src\kx\Event\ApplicationEvent.h" />
+    <ClInclude Include="Src\kx\Platform\Windows\WindowsWindow.h">
+      <Filter>kx\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\kx\Window.h">
+      <Filter>kx</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\kx\Layer.h" />
+    <ClInclude Include="Src\kx\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\kx\Application.cpp">
@@ -31,5 +56,10 @@
     <ClCompile Include="Src\kx\Logger.cpp">
       <Filter>kx</Filter>
     </ClCompile>
+    <ClCompile Include="Src\kx\Platform\Windows\WindowsWindow.cpp">
+      <Filter>kx\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\kx\Layer.cpp" />
+    <ClCompile Include="Src\kx\LayerStack.cpp" />
   </ItemGroup>
 </Project>

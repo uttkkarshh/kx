@@ -9,3 +9,5 @@
     #error kx ONLY SUPPORT WINDOWS
 #endif
 #define BIT(x) (1 << x)
+
+#define kx_ASSERT(x) if(x){}
