@@ -48,6 +48,22 @@
     </ClInclude>
     <ClInclude Include="Src\kx\Layer.h" />
     <ClInclude Include="Src\kx\LayerStack.h" />
+    <ClInclude Include="Src\kx\Imgui\ImGuiLayer.h" />
+    <ClInclude Include="vendor\Imgui\imstb_truetype.h" />
+    <ClInclude Include="vendor\Imgui\imconfig.h" />
+    <ClInclude Include="vendor\Imgui\imgui.h" />
+    <ClInclude Include="vendor\Imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="vendor\Imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\Imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="vendor\Imgui\imstb_textedit.h" />
+    <ClInclude Include="vendor\Imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="vendor\GlFW\glfw3.h" />
+    <ClInclude Include="vendor\GlFW\glfw3native.h" />
+    <ClInclude Include="Src\kx\input.h" />
+    <ClInclude Include="Src\kx\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="Src\kx\KeyCodes.h" />
+    <ClInclude Include="Src\kx\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\kx\Application.cpp">
@@ -61,5 +77,18 @@
     </ClCompile>
     <ClCompile Include="Src\kx\Layer.cpp" />
     <ClCompile Include="Src\kx\LayerStack.cpp" />
+    <ClCompile Include="Src\kx\Imgui\ImGuiLayer.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_tables.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Src\kx\Platform\Windows\WindowsInput.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="vendor\GlFW\glfw3.lib" />
+    <Library Include="vendor\GlFW\glfw3_mt.lib" />
   </ItemGroup>
 </Project>

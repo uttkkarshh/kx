@@ -1,4 +1,5 @@
-﻿  sand.cpp
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2116,5): warning : The referenced project 'vendor\Imgui\ImGui.vcxproj' does not exist.
+  sand.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\dev\kx\kx\kx\vendor\GLFW\glfw3.h(123,1): message : see previous definition of 'APIENTRY'
 C:\dev\kx\kx\kx\Src\kx\Logger.h(15,42): warning C4251: 'kx::Logger::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'kx::Logger'
@@ -19,6 +20,6 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.3221
           [
               _Ty=kx::Layer *
           ]
-C:\dev\kx\kx\kx\Src\kx\Application.h(19,27): warning C4251: 'kx::Application::m_Window': class 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>' needs to have dll-interface to be used by clients of class 'kx::Application'
-C:\dev\kx\kx\kx\Src\kx\Application.h(19,8): message : see declaration of 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>'
+C:\dev\kx\kx\kx\Src\kx\Application.h(22,27): warning C4251: 'kx::Application::m_Window': class 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>' needs to have dll-interface to be used by clients of class 'kx::Application'
+C:\dev\kx\kx\kx\Src\kx\Application.h(22,8): message : see declaration of 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>'
   sand.vcxproj -> C:\dev\kx\kx\bin\-windows-x86_64\sand\sand.exe

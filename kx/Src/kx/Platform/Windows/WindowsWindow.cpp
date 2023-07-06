@@ -2,6 +2,7 @@
 #include "kx/Event/ApplicationEvent.h"
 #include "kx/Event/KeyEvent.h"
 #include "kx/Event/MouseEvent.h"
+#include "glad/glad.h"
 namespace kx {
 	static void GLFWErrorCallBack(int error, const char* description) {
 		kx_CORE_TRACE(description);
@@ -13,7 +14,10 @@ namespace kx {
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
 		Init(props);
+		
 	}
+	
+
 	WindowsWindow::~WindowsWindow() {
 		Shutdown();
 	}
@@ -55,10 +59,12 @@ namespace kx {
 		}
 		m_Window = glfwCreateWindow(props.Width, props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 		//calllbacks
-
+		//p = m_Window;
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow*  window, int width, int height) {
 			WindowData& d=*(WindowData*)glfwGetWindowUserPointer(window);
 			WindowResizeEvent e(width,height);

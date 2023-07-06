@@ -8,11 +8,15 @@ public:
 
 	}
 	void OnUpdate()  override
-	{
-		kx_CORE_ERROR("Example Layer UPDATE");
+	{   
+		if (kx::Input::ISKeyPressed(KX_KEY_TAB))
+			kx_CORE_INFO("TAB IS PRESSED");
+
+
+		
 	}
 	void OnEvent(kx::Event& event)   override {
-		kx_CORE_INFO("ON Event");
+		//kx_CORE_INFO("ON Event");
 	}
 };
 
@@ -20,6 +24,7 @@ class sand : public kx::Application {
 public:
 	sand() {
 		PushLayer(new ExampleLayer());
+		PushLayer(new kx::ImGuiLayer());
 	}
 	~sand() {
 
@@ -27,5 +32,6 @@ public:
 };
 kx::Application* kx::CreateApplication() {
 	return  new sand;
+
 
 }

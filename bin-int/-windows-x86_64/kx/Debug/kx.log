@@ -1,21 +1,4 @@
-﻿  LayerStack.cpp
-C:\dev\kx\kx\kx\Src\kx\Layer.h(20,15): warning C4251: 'kx::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'kx::Layer'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xstring(5300,29): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\dev\kx\kx\kx\Src\kx\LayerStack.h(22,23): warning C4251: 'kx::LayerStack::m_Layers': class 'std::vector<kx::Layer *,std::allocator<kx::Layer *>>' needs to have dll-interface to be used by clients of class 'kx::LayerStack'
-C:\dev\kx\kx\kx\Src\kx\LayerStack.h(19,8): message : see declaration of 'std::vector<kx::Layer *,std::allocator<kx::Layer *>>'
-C:\dev\kx\kx\kx\Src\kx\LayerStack.h(23,33): warning C4251: 'kx::LayerStack::m_LayerInsert': class 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>' needs to have dll-interface to be used by clients of class 'kx::LayerStack'
-          with
-          [
-              _Ty=kx::Layer *
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(668,36): message : see declaration of 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>'
-          with
-          [
-              _Ty=kx::Layer *
-          ]
-  Layer.cpp
-C:\dev\kx\kx\kx\Src\kx\Layer.h(20,15): warning C4251: 'kx::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'kx::Layer'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xstring(5300,29): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2116,5): warning : The referenced project 'vendor\Imgui\ImGui.vcxproj' does not exist.
   Application.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\dev\kx\kx\kx\vendor\GLFW\glfw3.h(123,1): message : see previous definition of 'APIENTRY'
@@ -37,20 +20,30 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.3221
           [
               _Ty=kx::Layer *
           ]
-C:\dev\kx\kx\kx\Src\kx\Application.h(19,27): warning C4251: 'kx::Application::m_Window': class 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>' needs to have dll-interface to be used by clients of class 'kx::Application'
-C:\dev\kx\kx\kx\Src\kx\Application.h(19,8): message : see declaration of 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>'
-  Logger.cpp
-C:\dev\kx\kx\kx\Src\kx\Logger.h(15,42): warning C4251: 'kx::Logger::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'kx::Logger'
-C:\dev\kx\kx\kx\vendor\spdlog\include\spdlog\details\registry.h(34,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-C:\dev\kx\kx\kx\Src\kx\Logger.h(16,42): warning C4251: 'kx::Logger::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'kx::Logger'
-C:\dev\kx\kx\kx\vendor\spdlog\include\spdlog\details\registry.h(34,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-  WindowsWindow.cpp
+C:\dev\kx\kx\kx\Src\kx\Application.h(22,27): warning C4251: 'kx::Application::m_Window': class 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>' needs to have dll-interface to be used by clients of class 'kx::Application'
+C:\dev\kx\kx\kx\Src\kx\Application.h(22,8): message : see declaration of 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>'
+  WindowsInput.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
-C:\dev\kx\kx\kx\vendor\GLFW\glfw3.h(123,1): message : see previous definition of 'APIENTRY'
+C:\dev\kx\kx\kx\vendor\GlFW\glfw3.h(123,1): message : see previous definition of 'APIENTRY'
 C:\dev\kx\kx\kx\Src\kx\Logger.h(15,42): warning C4251: 'kx::Logger::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'kx::Logger'
 C:\dev\kx\kx\kx\vendor\spdlog\include\spdlog\details\registry.h(34,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
 C:\dev\kx\kx\kx\Src\kx\Logger.h(16,42): warning C4251: 'kx::Logger::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'kx::Logger'
 C:\dev\kx\kx\kx\vendor\spdlog\include\spdlog\details\registry.h(34,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\dev\kx\kx\kx\Src\kx\Layer.h(20,15): warning C4251: 'kx::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'kx::Layer'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xstring(5300,29): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\dev\kx\kx\kx\Src\kx\LayerStack.h(22,23): warning C4251: 'kx::LayerStack::m_Layers': class 'std::vector<kx::Layer *,std::allocator<kx::Layer *>>' needs to have dll-interface to be used by clients of class 'kx::LayerStack'
+C:\dev\kx\kx\kx\Src\kx\LayerStack.h(19,8): message : see declaration of 'std::vector<kx::Layer *,std::allocator<kx::Layer *>>'
+C:\dev\kx\kx\kx\Src\kx\LayerStack.h(23,33): warning C4251: 'kx::LayerStack::m_LayerInsert': class 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>' needs to have dll-interface to be used by clients of class 'kx::LayerStack'
+          with
+          [
+              _Ty=kx::Layer *
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(668,36): message : see declaration of 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>'
+          with
+          [
+              _Ty=kx::Layer *
+          ]
+C:\dev\kx\kx\kx\Src\kx\Application.h(22,27): warning C4251: 'kx::Application::m_Window': class 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>' needs to have dll-interface to be used by clients of class 'kx::Application'
+C:\dev\kx\kx\kx\Src\kx\Application.h(22,8): message : see declaration of 'std::unique_ptr<kx::Window,std::default_delete<kx::Window>>'
   Generating Code...
-     Creating library ..\bin\-windows-x86_64\kx\kx.lib and object ..\bin\-windows-x86_64\kx\kx.exp
   kx.vcxproj -> C:\dev\kx\kx\bin\-windows-x86_64\kx\kx.dll

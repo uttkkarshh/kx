@@ -78,8 +78,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>kx_PLATFORM_WINDOW;kx_BUILD_DLL;kx_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\kx\kx\kx\vendor;vendor\spdlog\include;Src;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>kx_PLATFORM_WINDOW;kx_BUILD_DLL;GLFW_INCLUDE_NONE;kx_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\dev\kx\kx\kx\vendor\Imgui;C:\dev\kx\kx\kx\vendor\Glad\Glad\include;C:\dev\kx\kx\kx\vendor;vendor\spdlog\include;Src;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -96,8 +96,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>kx_PLATFORM_WINDOW;kx_BUILD_DLL;kx_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\kx\kx\kx\vendor;vendor\spdlog\include;Src;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>kx_PLATFORM_WINDOW;kx_BUILD_DLL;GLFW_INCLUDE_NONE;kx_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\dev\kx\kx\kx\vendor\Imgui;C:\dev\kx\kx\kx\vendor\Glad\Glad\include;C:\dev\kx\kx\kx\vendor;vendor\spdlog\include;Src;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -120,8 +120,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>kx_PLATFORM_WINDOW;kx_BUILD_DLL;kx_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\kx\kx\kx\vendor;vendor\spdlog\include;Src;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>kx_PLATFORM_WINDOW;kx_BUILD_DLL;GLFW_INCLUDE_NONE;kx_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\dev\kx\kx\kx\vendor\Imgui;C:\dev\kx\kx\kx\vendor\Glad\Glad\include;C:\dev\kx\kx\kx\vendor;vendor\spdlog\include;Src;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -141,6 +141,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Src\kx\Imgui\ImGuiLayer.h" />
+    <ClInclude Include="Src\kx\input.h" />
+    <ClInclude Include="Src\kx\KeyCodes.h" />
     <ClInclude Include="Src\kx\LayerStack.h" />
     <ClInclude Include="Src\kx\Layer.h" />
     <ClInclude Include="Src\kx.h" />
@@ -152,15 +155,49 @@
     <ClInclude Include="Src\kx\Event\KeyEvent.h" />
     <ClInclude Include="Src\kx\Event\MouseEvent.h" />
     <ClInclude Include="Src\kx\Logger.h" />
+    <ClInclude Include="Src\kx\MouseButtonCodes.h" />
     <ClInclude Include="Src\kx\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="Src\kx\Window.h" />
+    <ClInclude Include="vendor\GlFW\glfw3.h" />
+    <ClInclude Include="vendor\GlFW\glfw3native.h" />
+    <ClInclude Include="vendor\Imgui\imconfig.h" />
+    <ClInclude Include="vendor\Imgui\imgui.h" />
+    <ClInclude Include="vendor\Imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="vendor\Imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\Imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="vendor\Imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="vendor\Imgui\imstb_textedit.h" />
+    <ClInclude Include="vendor\Imgui\imstb_truetype.h" />
+    <ClInclude Include="Src\kx\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\kx\Imgui\ImGuiLayer.cpp" />
     <ClCompile Include="Src\kx\LayerStack.cpp" />
     <ClCompile Include="Src\kx\Layer.cpp" />
     <ClCompile Include="Src\kx\Application.cpp" />
     <ClCompile Include="Src\kx\Logger.cpp" />
     <ClCompile Include="Src\kx\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_tables.cpp" />
+    <ClCompile Include="vendor\Imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Src\kx\Platform\Windows\WindowsInput.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vendor\Glad\Glad\Glad.vcxproj">
+      <Project>{1c732f40-8e93-4d9d-8ac9-4c193eeeb2ec}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\Imgui\ImGui.vcxproj">
+      <Project>{c0ff640d-2c14-8dbe-f595-301e616989ef}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="vendor\GlFW\glfw3.lib" />
+    <Library Include="vendor\GlFW\glfw3_mt.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
