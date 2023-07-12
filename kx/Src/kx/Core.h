@@ -1,9 +1,13 @@
 
 #ifdef kx_PLATFORM_WINDOW
-#ifdef kx_BUILD_DLL
-#define kx_API _declspec(dllexport)
+#if kx_DYNAMIC_LINK
+  #ifdef kx_BUILD_DLL
+     #define kx_API _declspec(dllexport)
+  #else
+     #define kx_API _declspec(dllimport)
+  #endif
 #else
-#define kx_API _declspec(dllimport)
+ #define kx_API
 #endif
 #else
     #error kx ONLY SUPPORT WINDOWS

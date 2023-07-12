@@ -1,3 +1,6 @@
 [submodule "kx/vendor/spdlog"]
 	path = kx/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "kx/vendor/glm"]
+	path = kx/vendor/glm
+	url = https://github.com/g-truc/glm.git

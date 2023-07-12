@@ -24,6 +24,7 @@ namespace kx {
 
 	void WindowsWindow::OnUpdate()
 	{
+		glClearColor(1, 0, 1, 1);
 		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
 		

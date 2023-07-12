@@ -4,6 +4,8 @@
 #include "glad/glad.h"
 #include "GlFW/glfw3.h"
 #include "kx/input.h"
+#include "glm/glm.hpp"
+
 namespace kx {
 	Application* Application::s_Instance = nullptr;
 	Application:: Application()
@@ -11,8 +13,8 @@ namespace kx {
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
-		unsigned int a;
-		glGenVertexArrays(1, &a);
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 	Application ::~Application() {
 
@@ -29,7 +31,7 @@ namespace kx {
 				break;
 		}
 	}
-	void Application::Run() {
+	void Application::Run() { 
 		WindowResizeEvent w = WindowResizeEvent(400, 22);
 		kx_CORE_TRACE(w.ToString());
 		 std::pair<float ,float> p= Input::GetMousePosition();
@@ -37,12 +39,20 @@ namespace kx {
 		while (m_running)
 		{
 			
+			
 			for (auto it : m_LayerStack) {
 				it->OnUpdate();
 			}
 			m_Window->OnUpdate();
+			m_ImGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
+			m_Window->OnUpdate();
 		}
-	    }
+		}
+
+		
 
 	bool Application::OnWindowClose(WindowCloseEvent& w)
 	{
