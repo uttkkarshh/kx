@@ -1,7 +1,8 @@
 #pragma once
 #include "kx/Window.h"
-#include <GLFW/glfw3.h>
+#include  "GLFW/glfw3.h"
 #include "kx/Logger.h"
+#include "kx/Renderer/GraphicsContext.h"
 namespace  kx{
 
 	class WindowsWindow : public Window
@@ -29,7 +30,7 @@ namespace  kx{
 		
 	private:
 		GLFWwindow* m_Window;
-		
+		GraphicsContext* m_Context;
 		struct WindowData
 		{
 			std::string Title;

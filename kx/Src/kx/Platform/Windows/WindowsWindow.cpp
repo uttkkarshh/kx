@@ -2,7 +2,8 @@
 #include "kx/Event/ApplicationEvent.h"
 #include "kx/Event/KeyEvent.h"
 #include "kx/Event/MouseEvent.h"
-#include "glad/glad.h"
+
+#include "kx/Platform/Windows/OpenGL/OpenGLContext.h"
 namespace kx {
 	static void GLFWErrorCallBack(int error, const char* description) {
 		kx_CORE_TRACE(description);
@@ -24,9 +25,8 @@ namespace kx {
 
 	void WindowsWindow::OnUpdate()
 	{
-		glClearColor(1, 0, 1, 1);
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
 		
 	}
 	
@@ -52,6 +52,7 @@ namespace kx {
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height; 
 		kx_CORE_TRACE("creating Window");
+	    
 		if (!s_GLFWInitialized) {
 			int success = glfwInit();
 			glfwSetErrorCallback(GLFWErrorCallBack);
@@ -59,9 +60,9 @@ namespace kx {
 
 		}
 		m_Window = glfwCreateWindow(props.Width, props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
+			
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 		//calllbacks

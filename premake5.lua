@@ -1,99 +1,146 @@
 workspace "kx"
-   architecture "x64"
-   configurations { "Debug", "Release","Dist" }
+	architecture "x64"
+	startproject "sand"
 
-outputdir = "%{cfg.bhidcfg}-%{cfg.system}-%{cfg.architecture}"
+	configurations
+	{
+		"Debug",
+		"Release",
+		"Dist"
+	}
+
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+-- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"]="kx/vendor/GLFW/include"
+IncludeDir["GLFW"] = "kx/vendor/GLFW/include"
+IncludeDir["Glad"] = "kx/vendor/Glad/include"
+IncludeDir["ImGui"] = "kx/vendor/imgui"
+IncludeDir["glm"] = "kx/vendor/glm"
 
-
+include "kx/vendor/GLFW"
+include "kx/vendor/Glad"
+include "kx/vendor/imgui"
 
 project "kx"
-   location "kx"
-   kind "SharedLib"
-   language "C++"
+	location "kx"
+	kind "StaticLib"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-   objdir ("bin-int/" ..outputdir .. "/%{prj.name}")
+	
 
-   files
-   {
-	   "%{prj.name}/Src/**.h",
-	    "%{prj.name}/Src/**.cpp"
-   }
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
+	}
 
-   includedirs{
-	   "%{prj.name}/vendor/spdlog/include",
-	   "kx/Src",
-	   "%{IncludeDir.GLFW}"
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
 
-   }
-  
-   filter "system:windows"
-      cppdialect "c++17"
-	  staticruntime "On"
-	  systemversion "latest"
+	includedirs
+	{
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
+	}
 
-      defines{
-	   "kx_PLATFORM_WINDOW",
-	   "kx_BUILD_DLL"
-      }
-      
-   filter "configurations:Debug"
-         defines "kx_DEBUG"
-	    
-   filter "configurations:Release"
-         defines "kx_RELEASE"
-		 optimize "On"
+	links 
+	{ 
+		"GLFW",
+		"Glad",
+		"ImGui",
+		"opengl32.lib"
+	}
 
-   filter "configurations:Dist"
-         defines "kx_Dist"
-		 optimize "On"
+	filter "system:windows"
+		systemversion "latest"
 
+		defines
+		{
+			"kx_PLATFORM_WINDOW",
+			"kx_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
+			
+		}
 
+	filter "configurations:Debug"
+		defines "kx_DEBUG"
+		runtime "Debug"
+		symbols "on"
 
+	filter "configurations:Release"
+		defines "kx_RELEASE"
+		runtime "Release"
+		optimize "on"
 
+	filter "configurations:Dist"
+		defines "kx_DIST"
+		runtime "Release"
+		optimize "on"
 
-   project "sand"
+project "sand"
 	location "sand"
-    kind "ConsoleApp" 
-    language "C++"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-   objdir ("bin-int/" ..outputdir .. "/%{prj.name}")
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
 
-   files
-   {
-	   "%{prj.name}/Src/**.h",
-	    "%{prj.name}/Src/**.cpp"
-   }
+	includedirs
+	{   
+		"kx/vendor/spdlog/include",
+		"kx/src",
+		"kx/vendor",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.GLFW}"
+	}
 
-   includedirs{
-	   "kx/vendor/spdlog/include",
-	   "kx/Src"
-   }
-   links{
-	   "kx"
-   }
-   filter "system:windows"
-      cppdialect "c++17"
-	  staticruntime "On"
-	  systemversion "latest"
+	links
+	{
+		"kx"
+	}
 
-      defines{
-	   "kx_PLATFORM_WINDOW"
-	   
-      }
-    
-   filter "configurations:Debug"
-         defines "kx_DEBUG"
-	    
-   filter "configurations:Release"
-         defines "kx_RELEASE"
-		 optimize "On"
+	filter "system:windows"
+		systemversion "latest"
 
-   filter "configurations:Dist"
-         defines "kx_Dist"
-		 optimize "On"
+		defines
+		{
+			"kx_PLATFORM_WINDOW"
+		}
+
+	filter "configurations:Debug"
+		defines "kx_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "kx_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "kx_DIST"
+		runtime "Release"
+		optimize "on"

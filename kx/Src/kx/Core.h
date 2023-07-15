@@ -1,4 +1,4 @@
-
+#pragma once
 #ifdef kx_PLATFORM_WINDOW
 #if kx_DYNAMIC_LINK
   #ifdef kx_BUILD_DLL
@@ -12,6 +12,22 @@
 #else
     #error kx ONLY SUPPORT WINDOWS
 #endif
+
+
+
+#ifdef kx_DEBUG
+#define kx_ENABLE_ASSERTS
+#endif
+
+#ifdef kx_ENABLE_ASSERTS
+#define kx_ASSERT(x, ...) { if(!(x)) { kx_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#define kx_CORE_ASSERT(x, ...) { if(!(x)) { kx_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+#define kx_ASSERT(x, ...)
+#define kx_CORE_ASSERT(x, ...)
+#endif
+
+
 #define BIT(x) (1 << x)
 
 #define kx_ASSERT(x) if(x){}

@@ -7,6 +7,7 @@
 	
 
 extern kx::Application* kx::CreateApplication();
+ 
 
 	int main() {
 		kx::Logger::Init();

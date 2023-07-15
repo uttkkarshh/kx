@@ -78,8 +78,7 @@ namespace kx {
 
 	void ImGuiLayer::OnImGuiRender()
 	{
-		 glClear(GL_COLOR_BUFFER_BIT);
-		 glClearColor(1, 0, 1, 1);
+		
 		static bool show = true;
 		ImGui::ShowDemoWindow(&show);
 	}

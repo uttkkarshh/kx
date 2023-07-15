@@ -21,3 +21,12 @@ namespace kx {
 #define kx_CORE_INFO(...)   ::kx::Logger::getCoreLogger()->info(__VA_ARGS__)
 #define kx_CORE_WARN(...)   ::kx::Logger::getCoreLogger()->warn(__VA_ARGS__)
 #define kx_CORE_ERROR(...)  ::kx::Logger::getCoreLogger()->error(__VA_ARGS__)
+
+
+
+//client 
+#define kx_TRACE(...)	      ::Hazel::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define kx_INFO(...)	      ::Hazel::Log::GetClientLogger()->info(__VA_ARGS__)
+#define kx_WARN(...)	      ::Hazel::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define kx_ERROR(...)	      ::Hazel::Log::GetClientLogger()->error(__VA_ARGS__)
+#define kx_FATAL(...)	      ::Hazel::Log::GetClientLogger()->fatal(__VA_ARGS__)
