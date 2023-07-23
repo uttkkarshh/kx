@@ -1346,6 +1346,16 @@
     </ClInclude>
     <ClInclude Include="Src\kx\Renderer\GraphicsContext.h" />
     <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="Src\kx\Renderer\shader.h" />
+    <ClInclude Include="Src\kx\Renderer\Buffer.h" />
+    <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="Src\kx\Renderer\Renderer.h" />
+    <ClInclude Include="Src\kx\Renderer\VertexArray.h" />
+    <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="Src\kx\Renderer\RenderCommand.h" />
+    <ClInclude Include="Src\kx\Renderer\RendererAPI.h" />
+    <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="Src\kx\Renderer\OrthographicCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\kx\Application.cpp">
@@ -1373,5 +1383,15 @@
       <Filter>src\kx\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="Src\kx\Renderer\shader.cpp" />
+    <ClCompile Include="Src\kx\Renderer\Renderer.cpp" />
+    <ClCompile Include="Src\kx\Renderer\Buffer.cpp" />
+    <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="Src\kx\Renderer\VertexArray.cpp" />
+    <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="Src\kx\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="Src\kx\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="Src\kx\Renderer\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>

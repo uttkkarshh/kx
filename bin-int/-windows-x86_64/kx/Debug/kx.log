@@ -1,8 +1,16 @@
-﻿  ImGuiLayer.cpp
+﻿  Buffer.cpp
+C:\dev\kx\kx\kx\src\kx\Core.h(33,1): warning C4005: 'kx_ASSERT': macro redefinition
+C:\dev\kx\kx\kx\src\kx\Core.h(23,1): message : see previous definition of 'kx_ASSERT'
+  Renderer.cpp
+C:\dev\kx\kx\kx\src\kx\Core.h(33,1): warning C4005: 'kx_ASSERT': macro redefinition
+C:\dev\kx\kx\kx\src\kx\Core.h(23,1): message : see previous definition of 'kx_ASSERT'
+  VertexArray.cpp
+C:\dev\kx\kx\kx\src\kx\Core.h(33,1): warning C4005: 'kx_ASSERT': macro redefinition
+C:\dev\kx\kx\kx\src\kx\Core.h(23,1): message : see previous definition of 'kx_ASSERT'
+  Application.cpp
 C:\dev\kx\kx\kx\src\kx\Core.h(33,1): warning C4005: 'kx_ASSERT': macro redefinition
 C:\dev\kx\kx\kx\src\kx\Core.h(23,1): message : see previous definition of 'kx_ASSERT'
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
-C:\dev\kx\kx\kx\vendor\Glad\include\glad\glad.h(32,1): message : see previous definition of 'APIENTRY'
-C:\dev\kx\kx\kx\src\kx\Imgui\ImGuiLayer.cpp(64,80): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-C:\dev\kx\kx\kx\src\kx\Imgui\ImGuiLayer.cpp(64,51): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\dev\kx\kx\kx\vendor\GLFW\include\GLFW\glfw3.h(123,1): message : see previous definition of 'APIENTRY'
+  Generating Code...
   kx.vcxproj -> C:\dev\kx\kx\bin\-windows-x86_64\kx\kx.lib
