@@ -4,7 +4,7 @@
 namespace kx {
 	class kx_API Input {
 	public:
-		static bool ISKeyPressed(int KeyCode) { return s_Instance->IsKeyPressedImpl(KeyCode); }
+		static bool IsKeyPressed(int KeyCode) { return s_Instance->IsKeyPressedImpl(KeyCode); }
 
 		inline static bool IsMouseButtonPressed(int button) { return s_Instance->IsMouseButtonPressedImpl(button); }
 		inline static std::pair<float, float> GetMousePosition() { return s_Instance->GetMousePositionImpl(); }

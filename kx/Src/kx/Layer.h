@@ -2,6 +2,7 @@
 #include "Core.h"
 #include <string>
 #include "Event/Event.h"
+#include "kx/Core/Timestep.h"
 namespace kx {
 
 	class kx_API Layer
@@ -12,7 +13,7 @@ namespace kx {
 		virtual ~Layer();
 		virtual void OnAttach() {};
 		virtual void OnDetach() {};
-		virtual void OnUpdate() {};
+		virtual void OnUpdate(Timestep ts) {};
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {};
 

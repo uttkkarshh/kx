@@ -8,6 +8,8 @@
 #include "Renderer/Buffer.h"
 #include "kx/Renderer/VertexArray.h"
 #include "kx/Renderer/OrthographicCamera.h"
+#include "Core/Timestep.h"
+
 namespace kx {
 	
 	class kx_API Application
@@ -31,11 +33,7 @@ namespace kx {
 		bool m_running=true;
 		LayerStack m_LayerStack;
 		static Application* s_Instance;
-		OrthographicCamera m_Camera;
-		std::shared_ptr<VertexArray> m_VertexArray;
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
+		float m_LastFrameTime = 0.0f;
 	};
 	Application* CreateApplication();
 }

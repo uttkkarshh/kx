@@ -141,6 +141,13 @@
       <Project>{88785900-7404-880B-DDB2-880BC95D880B}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\avtar.png" />
+    <Image Include="assets\textures\Checkerboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\Texture.glsl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "kx/vendor/GLFW/include"
 IncludeDir["Glad"] = "kx/vendor/Glad/include"
 IncludeDir["ImGui"] = "kx/vendor/imgui"
 IncludeDir["glm"] = "kx/vendor/glm"
+IncludeDir["stb_image"] = "kx/vendor/stb_image"
 
 include "kx/vendor/GLFW"
 include "kx/vendor/Glad"
@@ -38,6 +39,8 @@ project "kx"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
@@ -54,7 +57,8 @@ project "kx"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links 

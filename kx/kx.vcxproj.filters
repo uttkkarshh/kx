@@ -7,6 +7,9 @@
     <Filter Include="src\kx">
       <UniqueIdentifier>{3F4E661C-2BF0-90F2-14AB-A44600EC1743}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\kx\Core">
+      <UniqueIdentifier>{F731F554-63E7-6D4A-ECDB-67215890644E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\kx\Event">
       <UniqueIdentifier>{D042C3F3-BCA5-5298-652B-8B4E516D1E1B}</UniqueIdentifier>
     </Filter>
@@ -18,6 +21,12 @@
     </Filter>
     <Filter Include="src\kx\Platform\Windows">
       <UniqueIdentifier>{AD6E0BDE-19A6-5375-22B0-B7988E667A6E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\kx\Platform\Windows\OpenGL">
+      <UniqueIdentifier>{4133FD17-2D59-C77E-169F-4C4A0264EC4A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\kx\Renderer">
+      <UniqueIdentifier>{C508831C-3194-F0E0-3AA5-73D5A6AF4CE1}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -40,6 +49,9 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\kx.h">
@@ -50,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="src\kx\Core.h">
       <Filter>src\kx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Core\Timestep.h">
+      <Filter>src\kx\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\kx\Entrypoint.h">
       <Filter>src\kx</Filter>
@@ -84,11 +99,56 @@
     <ClInclude Include="src\kx\MouseButtonCodes.h">
       <Filter>src\kx</Filter>
     </ClInclude>
+    <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLBuffer.h">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLContext.h">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLShader.h">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLTexture.h">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\kx\Platform\Windows\WindowsInput.h">
       <Filter>src\kx\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\kx\Platform\Windows\WindowsWindow.h">
       <Filter>src\kx\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\Buffer.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\GraphicsContext.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\OrthographicCamera.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\RenderCommand.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\Renderer.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\RendererAPI.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\Texture.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\VertexArray.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\shader.h">
+      <Filter>src\kx\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\kx\Window.h">
       <Filter>src\kx</Filter>
@@ -1344,18 +1404,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="Src\kx\Renderer\GraphicsContext.h" />
-    <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="Src\kx\Renderer\shader.h" />
-    <ClInclude Include="Src\kx\Renderer\Buffer.h" />
-    <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="Src\kx\Renderer\Renderer.h" />
-    <ClInclude Include="Src\kx\Renderer\VertexArray.h" />
-    <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="Src\kx\Renderer\RenderCommand.h" />
-    <ClInclude Include="Src\kx\Renderer\RendererAPI.h" />
-    <ClInclude Include="Src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="Src\kx\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\kx\Application.cpp">
@@ -1376,22 +1427,56 @@
     <ClCompile Include="src\kx\Logger.cpp">
       <Filter>src\kx</Filter>
     </ClCompile>
+    <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLContext.cpp">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLShader.cpp">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\kx\Platform\Windows\WindowsInput.cpp">
       <Filter>src\kx\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\kx\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\kx\Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="Src\kx\Renderer\shader.cpp" />
-    <ClCompile Include="Src\kx\Renderer\Renderer.cpp" />
-    <ClCompile Include="Src\kx\Renderer\Buffer.cpp" />
-    <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="Src\kx\Renderer\VertexArray.cpp" />
-    <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="Src\kx\Renderer\RenderCommand.cpp" />
-    <ClCompile Include="Src\kx\Renderer\RendererAPI.cpp" />
-    <ClCompile Include="Src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="Src\kx\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\kx\Renderer\Buffer.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\OrthographicCamera.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\RenderCommand.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\Renderer.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\RendererAPI.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\Texture.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\VertexArray.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\shader.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,1 +1,2 @@
-﻿  sand.vcxproj -> C:\dev\kx\kx\bin\-windows-x86_64\sand\sand.exe
+﻿LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  sand.vcxproj -> C:\dev\kx\kx\bin\-windows-x86_64\sand\sand.exe
