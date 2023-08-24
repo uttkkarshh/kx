@@ -1,7 +1,7 @@
 #include "OpenGLContext.h"
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
-#include "kx/Logger.h"
+#include "kx/Core/Logger.h"
 void kx::OpenGLContext::Init()
 {
 	glfwMakeContextCurrent(m_WindowHandle);

@@ -1,4 +1,5 @@
 #include "kx.h"
+#include "kx/Core/Entrypoint.h"
 #include <glm/vec3.hpp> // glm::vec3
 #include <glm/vec4.hpp> // glm::vec4
 #include <glm/mat4x4.hpp> // glm::mat4
@@ -10,13 +11,13 @@
 
 #include <memory>
 
-
+#include "Sandbox2D.h"
 class ExampleLayer :public  kx::Layer {
 public:
 	ExampleLayer()
-		:Layer("From Example Layer"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		:Layer("From Example Layer"), m_CameraController(1080.0f / 720.0f)
 	{
-		m_VertexArray.reset(kx::VertexArray::Create());
+		m_VertexArray=kx::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -38,7 +39,7 @@ public:
 		indexBuffer.reset(kx::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(kx::VertexArray::Create());
+		m_SquareVA=kx::VertexArray::Create();
 
 		float squareVertices[3 * 4] = {
 			-0.5f, -0.5f, 0.0f,
@@ -69,7 +70,7 @@ public:
 		texVB.reset(kx::VertexBuffer::Create(texVertices, sizeof(texVertices)));
 		texVB->SetLayout({ {kx::ShaderDataType::Float3,"a_position"},
                   {  kx::ShaderDataType::Float2 ,"a_texture"}});
-		m_TexVA.reset(kx::VertexArray::Create());
+		m_TexVA=kx::VertexArray::Create();
 		m_TexVA->AddVertexBuffer(texVB);
 		uint32_t texIndices[6] = { 0, 1, 2, 2, 3, 0 };
 		kx::Ref<kx::IndexBuffer> texIB;
@@ -173,25 +174,11 @@ public:
 	}
 	void OnUpdate(kx::Timestep ts)  override
 	{   
-		if (kx::Input::IsKeyPressed(KX_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed *ts ;
-		else if (kx::Input::IsKeyPressed(KX_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed *ts;
-
-		if (kx::Input::IsKeyPressed(KX_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed *ts;
-		else if (kx::Input::IsKeyPressed(KX_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed *ts;
-
-		if (kx::Input::IsKeyPressed(KX_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed *ts ;
-		if (kx::Input::IsKeyPressed(KX_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed *ts;
+		m_CameraController.OnUpdate(ts);
 		kx::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		kx::RenderCommand::Clear();
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-		kx::Renderer::BeginScene(m_Camera);
+		
+		kx::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
@@ -203,8 +190,8 @@ public:
 			{
 				glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
 				glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
-			//	kx::Renderer::Submit(m_BlueShader, m_SquareVA, transform);
-			//	kx::Renderer::Submit(m_Shader, m_VertexArray,transform);
+				kx::Renderer::Submit(m_BlueShader, m_SquareVA, transform);
+				kx::Renderer::Submit(m_Shader, m_VertexArray,transform);
 				m_Texture->Bind();
 				kx::Renderer::Submit(m_texShader, m_TexVA);
 				m_avtar->Bind();
@@ -224,7 +211,7 @@ public:
 		}
 	
 	void OnEvent(kx::Event& event)   override {
-		
+		m_CameraController.OnEvent(event);
 
 	}
 private:
@@ -242,12 +229,13 @@ private:
 	kx::Ref<kx::VertexArray> m_TexVA;
 
 	kx::Ref<kx::Texture2D> m_Texture,m_avtar;
-	kx::OrthographicCamera m_Camera;
+	kx::OrthographicCameraController m_CameraController;
+	/*kx::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
 	float m_CameraMoveSpeed = 5.0f;
 
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
+	float m_CameraRotationSpeed = 180.0f;*/
 
     glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
@@ -255,8 +243,8 @@ private:
 class sand : public kx::Application {
 public:
 	sand() {
-		PushLayer(new ExampleLayer());
-		
+		//PushLayer(new ExampleLayer());
+	    PushLayer(new Sandbox2D());
 	}
 	~sand() {
 

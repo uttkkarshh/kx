@@ -18,16 +18,16 @@
     <ClCompile Include="Src\sand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Sandbox2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\textures\Checkerboard.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="assets\textures\avtar.png">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClInclude Include="Src\Sandbox2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\shaders\Texture.glsl" />
+    <None Include="assets\shaders\FlatColor.glsl" />
   </ItemGroup>
 </Project>

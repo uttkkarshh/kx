@@ -1,6 +1,6 @@
 #include "OpenGLVertexArray.h"
-#include "kx/Core.h"
-#include "kx/Logger.h"
+#include "kx/Core/Core.h"
+#include "kx/Core/Logger.h"
 #include <glad/glad.h>
 namespace kx {
 

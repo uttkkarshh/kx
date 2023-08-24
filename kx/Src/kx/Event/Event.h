@@ -1,7 +1,7 @@
 #pragma once
 #include <string.h>
 #include <SStream>
-#include "kx/Core.h"
+#include "kx/Core/Core.h"
 namespace kx{
 	enum class EventType
 	{

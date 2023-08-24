@@ -1,7 +1,7 @@
 
 #include  "kx/Renderer/Buffer.h"
 #include "kx/Renderer/Renderer.h"
-#include "kx/Logger.h"
+#include "kx/Core/Logger.h"
 #include "kx/Platform/Windows/OpenGL/OpenGLBuffer.h"
 namespace kx {
 	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)

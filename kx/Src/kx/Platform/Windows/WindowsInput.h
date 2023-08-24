@@ -1,5 +1,5 @@
 #pragma once
-#include"kx/input.h"
+#include"kx/Core/input.h"
 
 namespace kx {
 	class WindowsInput :public Input

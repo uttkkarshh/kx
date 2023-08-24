@@ -123,7 +123,7 @@ namespace kx {
 			});
 		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos) {
 			WindowData& d = *(WindowData*)glfwGetWindowUserPointer(window);
-			MouseScrolledEvent event((float)xPos, (float)yPos);
+			MouseMovedEvent event((float)xPos, (float)yPos);
 			d.EventCallback(event);
 			});
 	

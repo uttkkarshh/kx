@@ -2,15 +2,15 @@
 
 #include "Renderer.h"
 #include "kx/Platform/Windows/OpenGL/OpenGLVertexArray.h"
-#include "kx/Core.h"
-#include "kx/Logger.h"
+#include "kx/Core/Core.h"
+#include "kx/Core/Logger.h"
 namespace kx {
-	VertexArray* VertexArray::Create()
+	Ref<VertexArray> VertexArray::Create()
 	{
 		switch (Renderer::GetAPI())
 		{
 		case RendererAPI::API::None:    kx_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return new OpenGLVertexArray();
+		case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLVertexArray>();
 		}
 
 		kx_CORE_ASSERT(false, "Unknown RendererAPI!");

@@ -141,20 +141,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\kx.h" />
-    <ClInclude Include="src\kx\Application.h" />
-    <ClInclude Include="src\kx\Core.h" />
+    <ClInclude Include="src\kx\Core\Application.h" />
+    <ClInclude Include="src\kx\Core\Core.h" />
+    <ClInclude Include="src\kx\Core\Entrypoint.h" />
+    <ClInclude Include="src\kx\Core\KeyCodes.h" />
+    <ClInclude Include="src\kx\Core\Layer.h" />
+    <ClInclude Include="src\kx\Core\LayerStack.h" />
+    <ClInclude Include="src\kx\Core\Logger.h" />
+    <ClInclude Include="src\kx\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\kx\Core\Timestep.h" />
-    <ClInclude Include="src\kx\Entrypoint.h" />
+    <ClInclude Include="src\kx\Core\Window.h" />
+    <ClInclude Include="src\kx\Core\input.h" />
     <ClInclude Include="src\kx\Event\ApplicationEvent.h" />
     <ClInclude Include="src\kx\Event\Event.h" />
     <ClInclude Include="src\kx\Event\KeyEvent.h" />
     <ClInclude Include="src\kx\Event\MouseEvent.h" />
     <ClInclude Include="src\kx\Imgui\ImGuiLayer.h" />
-    <ClInclude Include="src\kx\KeyCodes.h" />
-    <ClInclude Include="src\kx\Layer.h" />
-    <ClInclude Include="src\kx\LayerStack.h" />
-    <ClInclude Include="src\kx\Logger.h" />
-    <ClInclude Include="src\kx\MouseButtonCodes.h" />
     <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.h" />
@@ -166,14 +168,14 @@
     <ClInclude Include="src\kx\Renderer\Buffer.h" />
     <ClInclude Include="src\kx\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\kx\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\kx\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\kx\Renderer\RenderCommand.h" />
     <ClInclude Include="src\kx\Renderer\Renderer.h" />
+    <ClInclude Include="Src\kx\Renderer\Renderer2D.h" />
     <ClInclude Include="src\kx\Renderer\RendererAPI.h" />
     <ClInclude Include="src\kx\Renderer\Texture.h" />
     <ClInclude Include="src\kx\Renderer\VertexArray.h" />
     <ClInclude Include="src\kx\Renderer\shader.h" />
-    <ClInclude Include="src\kx\Window.h" />
-    <ClInclude Include="src\kx\input.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -593,12 +595,12 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\kx\Application.cpp" />
+    <ClCompile Include="src\kx\Core\Application.cpp" />
+    <ClCompile Include="src\kx\Core\Layer.cpp" />
+    <ClCompile Include="src\kx\Core\LayerStack.cpp" />
+    <ClCompile Include="src\kx\Core\Logger.cpp" />
     <ClCompile Include="src\kx\Imgui\ImGuiLayer.cpp" />
     <ClCompile Include="src\kx\Imgui\ImguiBuil.cpp" />
-    <ClCompile Include="src\kx\Layer.cpp" />
-    <ClCompile Include="src\kx\LayerStack.cpp" />
-    <ClCompile Include="src\kx\Logger.cpp" />
     <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.cpp" />
@@ -609,8 +611,10 @@
     <ClCompile Include="src\kx\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\kx\Renderer\Buffer.cpp" />
     <ClCompile Include="src\kx\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\kx\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\kx\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\kx\Renderer\Renderer.cpp" />
+    <ClCompile Include="Src\kx\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\kx\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\kx\Renderer\Texture.cpp" />
     <ClCompile Include="src\kx\Renderer\VertexArray.cpp" />

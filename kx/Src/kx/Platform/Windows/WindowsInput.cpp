@@ -1,6 +1,6 @@
 #include "WindowsInput.h"
 #include "GlFW/glfw3.h"
-#include"kx/Application.h"
+#include"kx/Core/Application.h"
 namespace kx {
 	Input* Input::s_Instance = new WindowsInput();
 	bool WindowsInput::IsKeyPressedImpl(int keycode)

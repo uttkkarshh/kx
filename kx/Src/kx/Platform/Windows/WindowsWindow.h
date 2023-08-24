@@ -1,7 +1,7 @@
 #pragma once
-#include "kx/Window.h"
+#include "kx/Core/Window.h"
 #include  "GLFW/glfw3.h"
-#include "kx/Logger.h"
+#include "kx/Core/Logger.h"
 #include "kx/Renderer/GraphicsContext.h"
 namespace  kx{
 

@@ -1,4 +1,2 @@
-﻿  shader.cpp
-C:\dev\kx\kx\kx\src\kx\Core.h(34,1): warning C4005: 'kx_ASSERT': macro redefinition
-C:\dev\kx\kx\kx\src\kx\Core.h(24,1): message : see previous definition of 'kx_ASSERT'
+﻿  Renderer2D.cpp
   kx.vcxproj -> C:\dev\kx\kx\bin\-windows-x86_64\kx\kx.lib
