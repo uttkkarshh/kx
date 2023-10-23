@@ -12,6 +12,8 @@
 #include "kx/Core/MouseButtonCodes.h"
 #include "kx/Core/input.h"
 
+//Debug
+#include "kx/Debug/Instrumentor.h"
 
 
 // ---Renderer------------------------
@@ -22,6 +24,7 @@
 #include "kx/Renderer/Buffer.h"
 #include "kx/Renderer/Shader.h"
 #include "kx/Renderer/VertexArray.h"
+#include "kx/Renderer/Framebuffer.h"
 #include "kx/Platform/Windows/OpenGL/OpenGLShader.h"
 
 

@@ -19,7 +19,10 @@ private:
 	// Temp
 	kx::Ref<kx::VertexArray> m_SquareVA;
 	kx::Ref<kx::Shader> m_FlatColorShader;
-
+	kx::Ref<kx::Framebuffer> m_Framebuffer;
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+	
+
+	
 };
 

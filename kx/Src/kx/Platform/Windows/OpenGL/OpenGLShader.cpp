@@ -7,7 +7,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <vector>
-
+#include "kx/Debug/Instrumentor.h"
 namespace kx {
 	static GLenum ShaderTypeFromString(const std::string& type)
 	{
@@ -22,6 +22,7 @@ namespace kx {
 
 	OpenGLShader::OpenGLShader(const std::string& filepath)
 	{
+		kx_PROFILE_FUNCTION();
 		std::string source = ReadFile(filepath);
 		auto shaderSources = PreProcess(source);
 		Compile(shaderSources);
@@ -35,6 +36,7 @@ namespace kx {
 	OpenGLShader::OpenGLShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
 		: m_Name(name)
 	{
+		kx_PROFILE_FUNCTION();
 		std::unordered_map<GLenum, std::string> sources;
 		sources[GL_VERTEX_SHADER] = vertexSrc;
 		sources[GL_FRAGMENT_SHADER] = fragmentSrc;
@@ -45,6 +47,7 @@ namespace kx {
 
 	std::string OpenGLShader::ReadFile(const std::string& filepath)
 	{
+		kx_PROFILE_FUNCTION();
 		std::string result;
 		std::ifstream in(filepath, std::ios::in | std::ios::binary);
 		if (in)
@@ -88,6 +91,7 @@ namespace kx {
 
 	void OpenGLShader::Compile(const std::unordered_map<GLenum, std::string>& shaderSources)
 	{
+		kx_PROFILE_FUNCTION();
 		GLuint program = glCreateProgram();
 		kx_CORE_ASSERT(shaderSources.size() <= 2, "We only support 2 shaders for now");
 		std::array<GLenum, 2> glShaderIDs;
@@ -159,16 +163,19 @@ namespace kx {
 	
 	OpenGLShader::~OpenGLShader()
 	{
+		kx_PROFILE_FUNCTION();
 		glDeleteProgram(m_RendererID);
 	}
 
 	void OpenGLShader::Bind() const
 	{
+		kx_PROFILE_FUNCTION();
 		glUseProgram(m_RendererID);
 	}
 
 	void OpenGLShader::Unbind() const
 	{
+		kx_PROFILE_FUNCTION();
 		glUseProgram(0);
 	}
 
@@ -192,6 +199,17 @@ namespace kx {
 	void OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
 	{
 		UploadUniformMat4(name, value);
+	}
+
+	void OpenGLShader::SetFloat(const std::string& name, float value)
+	{
+		UploadUniformFloat(name, value);
+	}
+
+	void OpenGLShader::SetIntArray(const std::string& name, int* values, uint32_t count)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform1iv(location, count, values);
 	}
 
 
@@ -235,5 +253,8 @@ namespace kx {
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
+	}
+	void OpenGLShader::UploadUniformIntArray(const std::string& name, int* values, uint32_t count)
+	{UploadUniformIntArray(name, values, count);
 	}
 }

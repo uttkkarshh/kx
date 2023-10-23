@@ -1,2 +1,11 @@
-﻿  Renderer2D.cpp
+﻿  Application.cpp
+C:\dev\kx\kx\kx\src\kx\Debug\Instrumentor.h(112,22): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  ImGuiLayer.cpp
+C:\dev\kx\kx\kx\src\kx\Debug\Instrumentor.h(112,22): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\dev\kx\kx\kx\src\kx\Imgui\ImGuiLayer.cpp(68,80): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+C:\dev\kx\kx\kx\src\kx\Imgui\ImGuiLayer.cpp(68,51): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  WindowsInput.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\dev\kx\kx\kx\vendor\GLFW\include\GlFW\glfw3.h(123,1): message : see previous definition of 'APIENTRY'
+  Generating Code...
   kx.vcxproj -> C:\dev\kx\kx\bin\-windows-x86_64\kx\kx.lib

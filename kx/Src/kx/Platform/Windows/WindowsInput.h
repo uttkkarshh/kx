@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include"kx/Core/input.h"
 
 namespace kx {
@@ -12,4 +12,4 @@ namespace kx {
 		virtual float GetMouseYImpl() override;
 	};
 
-}
+}*/

@@ -148,3 +148,60 @@ project "sand"
 		defines "kx_DIST"
 		runtime "Release"
 		optimize "on"
+
+
+
+
+		project "kx-Editor"
+	location "kx-Editor"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{   
+		"kx/vendor/spdlog/include",
+		"kx/src",
+		"kx/vendor",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"kx"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+		defines
+		{
+			"kx_PLATFORM_WINDOW"
+		}
+
+	filter "configurations:Debug"
+		defines "kx_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "kx_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "kx_DIST"
+		runtime "Release"
+		optimize "on"

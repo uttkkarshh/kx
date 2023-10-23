@@ -4,14 +4,15 @@
 #include "kx/Renderer/Renderer.h"
 #include "GlFW/glfw3.h"
 #include "kx/Core/input.h"
-
+#include "kx/Debug/Instrumentor.h"
 namespace kx {
 	Application* Application::s_Instance = nullptr;
 	
-	Application:: Application()
+	Application:: Application(std::string name)
 	{
+		kx_PROFILE_FUNCTION();
 		s_Instance = this;
-		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window = std::unique_ptr<Window>(Window::Create(WindowProps(name)));
 		m_Window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
 		Renderer::Init();
 		m_ImGuiLayer = new ImGuiLayer();
@@ -20,7 +21,7 @@ namespace kx {
 		
 	}
 	Application ::~Application() {
-
+		kx_PROFILE_FUNCTION()
 	}
 	void Application::OnEvent(Event& e)
 	{
@@ -38,7 +39,7 @@ namespace kx {
 		WindowResizeEvent w = WindowResizeEvent(400, 22);
 		kx_CORE_TRACE(w.ToString());
 		 std::pair<float ,float> p= Input::GetMousePosition();
-		
+		 kx_PROFILE_FUNCTION()
 		 while (m_running)
 		 {
 
@@ -68,7 +69,10 @@ namespace kx {
 			return true;
 		
 	}
-
+	void Application::Close()
+	{
+		m_running = false;
+	}
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
@@ -83,6 +87,7 @@ namespace kx {
 
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		kx_PROFILE_FUNCTION()
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;

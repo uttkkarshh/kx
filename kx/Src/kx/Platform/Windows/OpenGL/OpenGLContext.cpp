@@ -2,8 +2,10 @@
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 #include "kx/Core/Logger.h"
+#include "kx/Debug/Instrumentor.h"
 void kx::OpenGLContext::Init()
 {
+	kx_PROFILE_FUNCTION();
 	glfwMakeContextCurrent(m_WindowHandle);
 	int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 	kx_CORE_ASSERT(status, "Failed to initialize Glad!");

@@ -6,8 +6,9 @@ namespace kx {
 	{
 	public:
 		OpenGLVertexBuffer(float* vertices, uint32_t size);
+		OpenGLVertexBuffer( uint32_t size);
 		virtual ~OpenGLVertexBuffer();
-
+		virtual void SetData(const void* data, uint32_t size) ;
 		virtual void Bind() const;
 		virtual void Unbind() const;
 		virtual const BufferLayout& GetLayout() const override { return m_Layout; }

@@ -2,6 +2,7 @@
 #include "glad/glad.h"
 #include "GlFW/glfw3.h"
 #include "kx/Core/Application.h"
+#include "kx/Debug/Instrumentor.h"
 namespace kx {
 	ImGuiLayer::ImGuiLayer()
 		:Layer("ImguiLayer")
@@ -13,6 +14,7 @@ namespace kx {
 	}
 	void ImGuiLayer::Begin()
 	{
+		kx_PROFILE_FUNCTION()
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -22,6 +24,7 @@ namespace kx {
 	
 	void ImGuiLayer::OnAttach()
 	{
+		kx_PROFILE_FUNCTION()
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -52,13 +55,14 @@ namespace kx {
 	}
 	void ImGuiLayer::OnDetach()
 	{
-
+		kx_PROFILE_FUNCTION()
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
 	}
 	void ImGuiLayer::End()
 	{
+		kx_PROFILE_FUNCTION()
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2(app.GetWindow().GetWidth(), app.GetWindow().GetHeight());
@@ -76,11 +80,14 @@ namespace kx {
 		}
 	}
 
-	void ImGuiLayer::OnImGuiRender()
+	void ImGuiLayer::OnEvent(Event& e)
 	{
-		
-		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
+		if (m_BlockEvents)
+		{
+			ImGuiIO& io = ImGui::GetIO();
+			e.Handled |= e.IsInCategory(EventCategoryMouse) & io.WantCaptureMouse;
+			e.Handled |= e.IsInCategory(EventCategoryKeyboard) & io.WantCaptureKeyboard;
+		}
 	}
 	
 }

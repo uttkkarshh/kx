@@ -10,6 +10,9 @@
     <Filter Include="src\kx\Core">
       <UniqueIdentifier>{F731F554-63E7-6D4A-ECDB-67215890644E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\kx\Debug">
+      <UniqueIdentifier>{F5CBA7F3-E12E-3798-8AB4-6F4E76F6021B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\kx\Event">
       <UniqueIdentifier>{D042C3F3-BCA5-5298-652B-8B4E516D1E1B}</UniqueIdentifier>
     </Filter>
@@ -90,6 +93,9 @@
     <ClInclude Include="src\kx\Core\input.h">
       <Filter>src\kx\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\kx\Debug\Instrumentor.h">
+      <Filter>src\kx\Debug</Filter>
+    </ClInclude>
     <ClInclude Include="src\kx\Event\ApplicationEvent.h">
       <Filter>src\kx\Event</Filter>
     </ClInclude>
@@ -123,6 +129,9 @@
     <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGLVertexArray.h">
       <Filter>src\kx\Platform\Windows\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\kx\Platform\Windows\OpenGL\OpenGlFramebuffer.h">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\kx\Platform\Windows\WindowsInput.h">
       <Filter>src\kx\Platform\Windows</Filter>
     </ClInclude>
@@ -130,6 +139,9 @@
       <Filter>src\kx\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\kx\Renderer\Buffer.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\Framebuffer.h">
       <Filter>src\kx\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\kx\Renderer\GraphicsContext.h">
@@ -145,6 +157,9 @@
       <Filter>src\kx\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\kx\Renderer\Renderer.h">
+      <Filter>src\kx\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kx\Renderer\Renderer2D.h">
       <Filter>src\kx\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\kx\Renderer\RendererAPI.h">
@@ -1410,7 +1425,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="Src\kx\Renderer\Renderer2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\kx\Core\Application.cpp">
@@ -1437,6 +1451,9 @@
     <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLContext.cpp">
       <Filter>src\kx\Platform\Windows\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLFrameBuffer.cpp">
+      <Filter>src\kx\Platform\Windows\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\kx\Platform\Windows\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>src\kx\Platform\Windows\OpenGL</Filter>
     </ClCompile>
@@ -1458,6 +1475,9 @@
     <ClCompile Include="src\kx\Renderer\Buffer.cpp">
       <Filter>src\kx\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\kx\Renderer\Framebuffer.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\kx\Renderer\OrthographicCamera.cpp">
       <Filter>src\kx\Renderer</Filter>
     </ClCompile>
@@ -1468,6 +1488,9 @@
       <Filter>src\kx\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\kx\Renderer\Renderer.cpp">
+      <Filter>src\kx\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kx\Renderer\Renderer2D.cpp">
       <Filter>src\kx\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\kx\Renderer\RendererAPI.cpp">
@@ -1485,6 +1508,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="Src\kx\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>

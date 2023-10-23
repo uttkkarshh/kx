@@ -15,7 +15,7 @@ namespace kx {
 	class kx_API Application
 	{
 	public:
-		Application();
+		Application(std::string name);
 
 		~Application();
 		void OnEvent(Event &e);
@@ -26,7 +26,8 @@ namespace kx {
 		inline Window& GetWindow() { return *m_Window; }
 		bool OnWindowResize(WindowResizeEvent& e);
 		inline static Application& Get() { return *s_Instance; }
-		
+		void Close();
+		ImGuiLayer* GetImGuiLayer() { return m_ImGuiLayer; }
 	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;

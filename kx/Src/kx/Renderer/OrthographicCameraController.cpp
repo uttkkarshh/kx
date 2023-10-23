@@ -4,6 +4,7 @@
 #include "kx/Core/KeyCodes.h"
 #include "kx/Core/Logger.h"
 #include "kx/Core/Core.h"
+#include "kx/Debug/Instrumentor.h"
 namespace kx{
 	OrthographicCameraController::OrthographicCameraController(float aspectRatio, bool rotation)
 		: m_AspectRatio(aspectRatio),
@@ -59,6 +60,11 @@ namespace kx{
 		dispatcher.Dispatch<WindowResizeEvent>(KX_BIND_EVENT_FN(OrthographicCameraController::OnWindowResized));
 
 	}
+	void OrthographicCameraController::OnResize(float width, float height)
+	{
+		m_AspectRatio = width / height;
+		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
+	}
 	bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent& e)
 	{ 
 		m_ZoomLevel -= e.GetYOffset() * 0.25f;
@@ -71,8 +77,7 @@ namespace kx{
 	}
 	bool OrthographicCameraController::OnWindowResized(WindowResizeEvent& e)
 	{
-		m_AspectRatio = (float)e.GetWidth() / (float)e.GetHeight();
-		m_Camera.SetProjection(-m_AspectRatio * m_ZoomLevel, m_AspectRatio * m_ZoomLevel, -m_ZoomLevel, m_ZoomLevel);
+		OnResize((float)e.GetWidth(), (float)e.GetHeight());
 		return false;
 	}
 }

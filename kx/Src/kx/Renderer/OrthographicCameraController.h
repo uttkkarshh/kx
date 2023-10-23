@@ -16,7 +16,7 @@ namespace kx {
 		void SetZoomLevel(float level) { m_ZoomLevel = level; }
 		void OnUpdate(Timestep ts);
 		void OnEvent(Event& e);
-
+		void OnResize(float width, float height);
 		OrthographicCamera& GetCamera() { return m_Camera; }
 		const OrthographicCamera& GetCamera() const { return m_Camera; }
 	private:

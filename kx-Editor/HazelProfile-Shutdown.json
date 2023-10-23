@@ -1,0 +1,1 @@
+{"otherData": {},"traceEvents":[{"cat":"function","dur":0,"name":"__cdecl kx::Application::~Application(void)","ph":"X","pid":0,"tid":1145846730,"ts":39898046718},{"cat":"function","dur":38255,"name":"void __cdecl kx::ImGuiLayer::OnDetach(void)","ph":"X","pid":0,"tid":1145846730,"ts":39898047316}]}
